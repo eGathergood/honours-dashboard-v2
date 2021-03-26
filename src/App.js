@@ -1,5 +1,9 @@
-import './App.css';
-import BarChart from './ExampleChart'
+import "./App.css";
+//import ExampleChart from "./ExampleChart";
+import BarChart from "./BarChart";
+
+const barLabels = ["2017", "2018"];
+const barValues = [120, 130];
 
 function App() {
   return (
@@ -8,8 +12,10 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-            </header>
-            <BarChart />
+      </header>
+      {/* //<ExampleChart /> */}
+      {/* Barr chart containg number of tweets in period and years */}
+      <BarChart labels={barLabels} data={barValues} />
     </div>
   );
 }

@@ -1,12 +1,14 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
 
-const BarChart = () => {
+const test = ["Red", "Blue", "Pink", "Purple", "Brown"];
+
+const ExampleChart = () => {
   return (
     <div>
       <Line
         data={{
-          labels: ["Red", "Blue", "Pink", "Purple", "Brown"],
+          labels: test,
           datasets: [
             {
               label: "# of votes",
@@ -16,7 +18,6 @@ const BarChart = () => {
             {
               label: "Quantity",
               data: [34, 47, 47, 24, 12],
-              backgroundColor: "orange",
               borderColor: "red",
             },
           ],
@@ -40,4 +41,4 @@ const BarChart = () => {
   );
 };
 
-export default BarChart;
+export default ExampleChart;
