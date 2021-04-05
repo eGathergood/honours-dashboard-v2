@@ -1,21 +1,20 @@
 import React, { useState, useEffect } from "react";
-import { Bar } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
 
-const BarChart = ({ bLabels, bData, bColors }) => {
-  const [barLabels, setBarLabels] = useState();
-  const [barData, setBarData] = useState(); 
-  const [barColors, setBarColors] = useState();
+//this component requires labels and data as prop: [x,y,z]
+const LineChart = ({ lLabels, lData }) => {
+  const [lineLabels, setLineLabels] = useState();
+  const [lineData, setLineData] = useState();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setBarLabels(bLabels);
-    setBarData(bData);
-    setBarColors(bColors);
+    setLineLabels(lLabels);
+    setLineData(lData);
     setLoading(false);
-  }, [bLabels, bData, bColors]);
+  }, [lLabels, lData]);
 
-  console.log(barLabels);
-  console.log(barData);
+  console.log(lineLabels);
+  console.log(lineData);
 
   if (loading) {
     return <h1>Loading...</h1>;
@@ -23,20 +22,21 @@ const BarChart = ({ bLabels, bData, bColors }) => {
 
   return (
     <>
+      A Title?
       <div>
-        <Bar
+        <Line
           data={{
-            labels: barLabels,
+            labels: lineLabels,
             datasets: [
               {
-                label: "# of tweets",
-                data: barData,
-                backgroundColor: barColors,
+                label: "# of votes",
+                data: lineData,
+                borderColor: "black",
               },
             ],
           }}
           height={400}
-          width={600}
+          widht={600}
           options={{
             maintainAspectRatio: false,
             scales: {
@@ -55,4 +55,4 @@ const BarChart = ({ bLabels, bData, bColors }) => {
   );
 };
 
-export default BarChart;
+export default LineChart;
