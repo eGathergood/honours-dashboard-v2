@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { Bar } from "react-chartjs-2";
 
-function BarChart({ Tlabels, data }) {
+function BarChart({ bLabels, bData, bColors }) {
   const [barLabels, setBarLabels] = useState();
   const [barData, setBarData] = useState();
+  const [barColors, setBarColors] = useState();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setBarLabels(["red", "blue"]);
-    setBarData([2, 3]);
+    setBarLabels(bLabels);
+    setBarData(bData);
+    setBarColors(bColors);
     setLoading(false);
-  }, [Tlabels, data]);
+  }, [bLabels, bData, bColors]);
 
   console.log(barLabels);
   console.log(barData);
@@ -28,8 +30,8 @@ function BarChart({ Tlabels, data }) {
             datasets: [
               {
                 label: "# of tweets",
-                data: data,
-                backgroundColor: ["Red", "Blue"],
+                data: barData,
+                backgroundColor: barColors,
               },
             ],
           }}
