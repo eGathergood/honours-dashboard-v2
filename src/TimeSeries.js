@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
 
+//this component requires labels and data as prop: [x,y,z]
 const LineChart = ({ lLabels, lData }) => {
   const [lineLabels, setLineLabels] = useState();
   const [lineData, setLineData] = useState();
@@ -11,6 +12,9 @@ const LineChart = ({ lLabels, lData }) => {
     setLineData(lData);
     setLoading(false);
   }, [lLabels, lData]);
+
+  console.log(lineLabels);
+  console.log(lineData);
 
   if (loading) {
     return <h1>Loading...</h1>;
@@ -25,9 +29,9 @@ const LineChart = ({ lLabels, lData }) => {
             labels: lineLabels,
             datasets: [
               {
-                label: "# of tweets",
+                label: "# of votes",
                 data: lineData,
-                borderColor: "#60167a",
+                borderColor: "black",
               },
             ],
           }}
