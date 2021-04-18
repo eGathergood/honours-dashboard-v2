@@ -71,20 +71,18 @@ const sentimentColors = [
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-      </header>
-
+      <h3>Total Yearly Tweets</h3>
       <BarChart
         bLabels={barLabels}
         bData={barValues}
         bColors={barColors}
         bLabelTitle={barLabelTitle}
       />
+      <h3>Amount of Tweets in 2020</h3>
       <LineChart lLabels={lineLabels} lData={lineValues} />
+      <h3>Yearly Comparison of Campaign Period</h3>
       <MultiLineChart />
+      <h3>Tweet Sentiment in 2020</h3>
       <BarChart
         bLabels={sentimentLabels}
         bData={sentimentValues}

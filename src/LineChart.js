@@ -18,7 +18,6 @@ const LineChart = ({ lLabels, lData }) => {
 
   return (
     <>
-      A Title?
       <div>
         <Line
           data={{
